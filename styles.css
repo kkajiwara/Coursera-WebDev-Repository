@@ -1,0 +1,75 @@
+*{
+    font-family: sans-serif;
+        font-size: 3vw;
+    font-weight: 500;
+    border: solid 1px transparent;
+    margin: 0;
+    line-height: 110%;
+}
+html{
+/*    border: solid 1px blue;*/
+/*    background-color: antiquewhite;*/
+}
+body{
+/*    border: solid 1px red;*/
+/*    background-color: deepskyblue;*/
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight: 700;    
+}
+h1{
+    font-size: 6vw;
+}
+h2{
+    font-size: 5.5vw;
+}
+h3{
+    font-size: 5vw;
+}
+h4{
+    font-size: 4.5vw;
+}
+h5{
+    font-size: 4vw;
+}
+h6{
+    font-size: 3.5vw;
+}
+p{
+}
+blockquote{
+    padding: 1% 4%;
+}
+ol{
+    display: block;
+    padding-left: 4vw;
+    list-style-type: decimal;
+}
+ul{
+    display: block;
+    padding-left: 4vw;
+    list-style-type: disc;
+}
+li{
+    display: list-item;
+}
+hr {
+    display: block;
+    border: solid .1vw #000;
+    margin: 1vw auto 2vw;
+}
+/********* inline elements ******************/
+abbr, cite, code, del, em, strong, q{
+    font-size: inherit;
+}
+abbr, cite, dfn, em{
+    font-style: italic;
+    color: red;
+}
+strong {
+    font-weight: 700;
+}
+code{
+    font-family: monospace;
+}
+
