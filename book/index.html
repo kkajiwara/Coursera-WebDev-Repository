@@ -16,8 +16,8 @@
         }
 
         function displayResult() {
-            xml = loadXMLDoc("secret_new.xml");
-            xsl = loadXMLDoc("a_book.xsl");
+            xml = loadXMLDoc("secret.xml");
+            xsl = loadXMLDoc("book.xsl");
 
             if (document.implementation && document.implementation.createDocument) {
               xsltProcessor = new XSLTProcessor();
