@@ -56,7 +56,7 @@
                 <xsl:apply-templates select="."/>
         <!-- Chapter box instructions and Next/Previous links. -->
                 <div class="row">
-                    <p class="col-8 text-primary mb-1">Scroll in the box to read the entire chapter.</p>
+                    <p class="col-8 text-primary mb-1">Click and scroll in the box to read the entire chapter.</p>
                         <p class="col-2 text-right mb-1">
                             <xsl:if test="position()!=1">
                                 <a class="link-success">
