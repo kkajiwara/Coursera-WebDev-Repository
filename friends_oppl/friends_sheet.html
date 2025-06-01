@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Friends of OPPL Book Fair sale sheet</title>
+    <link rel="stylesheet" href="friends_css.css">
+</head>
+<body>
+<div>
+    <h3 class="center">Friends of the Oak Park Public Library<br>
+    Annual Book Fair sale sheet</h3>
+</div>
+    <table>
+        <tr id="row1">
+            <td class="left"><button id="clear_btn" tabindex="13">Clear</button></td>
+            <th>Price</th>
+            <th class="qty">Quantity/<br>Amount</th>
+            <th>Total</th>
+        </tr>
+        <tr id="row2">
+            <td class="left"><b>Adult/Teen</b></td>
+        </tr>
+        <tr id="row3">
+            <td class="left pad_L">Hardcover Book</td>
+            <td id="AT_hc_price" class="currency">2.00</td>
+            <td><input id="AT_hc_qty" tabindex="1" type='text' value='0'></td>
+            <td id="AT_hc_total" class="right"></td>
+        </tr>
+        <tr id="row4">
+            <td class="left pad_L">Paperback Book</td>
+            <td id="AT_pb_price" class="currency">1.00</td>
+            <td><input id="AT_pb_qty" tabindex="2" type='text' value='0'></td>
+            <td id="AT_pb_total" class="right"></td>
+        </tr>
+        <tr id="row5">
+            <td class="left pad_L">Mass Market</td>
+            <td id="AT_mmpb_price" class="currency">0.50</td>
+            <td><input id="AT_mmpb_qty" tabindex="3" type='text' value='0'></td>
+            <td id="AT_mmpb_total" class="right"></td>
+        </tr>
+
+        <tr id="row6">
+            <td class="left"><b>Children</b></td>
+        </tr>
+        <tr id="row7">
+            <td class="left pad_L">Hardcover Book</td>
+            <td id="C_hc_price" class="currency">1.00</td>
+            <td><input id="C_hc_qty" tabindex="4" type='text' value='0'></td>
+            <td id="C_hc_total" class="right"></td>
+        </tr>
+        <tr id="row8">
+            <td class="left pad_L">Paperback Book</td>
+            <td id="C_pb_price" class="currency">0.50</td>
+            <td><input id="C_pb_qty" tabindex="5" type='text' value='0'></td>
+            <td id="C_pb_total" class="right"></td>
+        </tr>
+        <tr id="row9">
+            <td class="left pad_L">Board Book</td>
+            <td id="C_board_price" class="currency">0.50</td>
+            <td><input id="C_board_qty" tabindex="6" type='text' value='0'></td>
+            <td id="C_board_total" class="right"></td>
+        </tr>
+
+        <tr id="row10">
+            <td class="left"><b>Other</b></td>
+        </tr>
+        <tr id="row11">
+            <td class="left pad_L">DVDs (per disc)</td>
+            <td id="DVD_price" class="currency">1.00</td>
+            <td><input id="DVD_qty" tabindex="7" type='text' value='0'></td>
+            <td id="DVD_total" class="right"></td>
+        </tr>
+        <tr id="row12">
+            <td class="left pad_L">CDs (per disc)</td>
+            <td id="CD_price" class="currency">1.00</td>
+            <td><input id="CD_qty" tabindex="8" type='text' value='0'></td>
+            <td id="CD_total" class="right"></td>
+        </tr>
+        <tr id="row13">
+            <td class="left pad_L">Puzzles and Games</td>
+            <td id="puzzle_price" class="currency">2.00</td>
+            <td><input id="puzzle_qty" tabindex="9" type='text' value='0'></td>
+            <td id="puzzle_total" class="right"></td>
+        </tr>
+        <tr id="row14">
+            <td class="left pad_L" colspan="2">Sets (as marked) - <i>type in total amount</i></td>
+<!--            <td id="sets_price"></td>-->
+            <td><input id="sets_qty" tabindex="10" type='text' value='0'></td>
+            <td id="sets_total" class="right"></td>
+        </tr>
+        <tr id="row15">
+            <td class="left pad_L" colspan="2">Other (as marked) - <i>type in total amount</i></td>
+<!--            <td id="other_price"></td>-->
+            <td><input id="other_qty" tabindex="11" type='text' value='0'></td>
+            <td id="other_total" class="right"></td>
+        </tr>
+
+        <tr id="row16">
+            <td class="right bold" colspan="2">Total amount from Friendly Picks</td>
+            <td><input id="friendly" class="bold" tabindex="12" type='text' value='0'></td>
+            <td id="friendly_total" class="right"></td>
+        </tr>
+        <tr id="row17">
+            <td class="grand_cells" colspan="3">GRAND TOTAL</td>
+            <td id="grand_total" class="right"></td>
+        </tr>
+
+    </table>
+    <script>
+        let clear_btn = document.getElementById("clear_btn");
+        clear_btn.addEventListener("click", clearSheet);
+        let qty1 = document.getElementById("AT_hc_qty");
+        let qty1_total_cell = document.getElementById("AT_hc_total");
+        let qty2 = document.getElementById("AT_pb_qty");
+        let qty2_total_cell = document.getElementById("AT_pb_total");
+        let qty3 = document.getElementById("AT_mmpb_qty");
+        let qty3_total_cell = document.getElementById("AT_mmpb_total");
+        let qty4 = document.getElementById("C_hc_qty");
+        let qty4_total_cell = document.getElementById("C_hc_total");
+        let qty5 = document.getElementById("C_pb_qty");
+        let qty5_total_cell = document.getElementById("C_pb_total");
+        let qty6 = document.getElementById("C_board_qty");
+        let qty6_total_cell = document.getElementById("C_board_total");
+        let qty7 = document.getElementById("DVD_qty");
+        let qty7_total_cell = document.getElementById("DVD_total");
+        let qty8 = document.getElementById("CD_qty");
+        let qty8_total_cell = document.getElementById("CD_total");
+        let qty9 = document.getElementById("puzzle_qty");
+        let qty9_total_cell = document.getElementById("puzzle_total");
+        let qty10 = document.getElementById("sets_qty");
+        let qty10_total_cell = document.getElementById("sets_total");
+        let qty11 = document.getElementById("other_qty");
+        let qty11_total_cell = document.getElementById("other_total");
+
+        let friendly = document.getElementById("friendly");
+        let friendly_total_cell = document.getElementById("friendly_total");
+        let grand_total = document.getElementById("grand_total");
+
+        qty1.addEventListener("input", calculateTotal);
+        qty2.addEventListener("input", calculateTotal);
+        qty3.addEventListener("input", calculateTotal);
+        qty4.addEventListener("input", calculateTotal);
+        qty5.addEventListener("input", calculateTotal);
+        qty6.addEventListener("input", calculateTotal);
+        qty7.addEventListener("input", calculateTotal);
+        qty8.addEventListener("input", calculateTotal);
+        qty9.addEventListener("input", calculateTotal);
+        qty10.addEventListener("input", calculateTotal);
+        qty11.addEventListener("input", calculateTotal);
+
+        friendly.addEventListener("input", calculateTotal);
+        function calculateTotal() {
+            let qty1_total = qty1.value * 2;
+            let qty2_total = qty2.value * 1;
+            let qty3_total = qty3.value * .50;
+            let qty4_total = qty4.value * 1;
+            let qty5_total = qty5.value * .50;
+            let qty6_total = qty6.value * .50;
+            let qty7_total = qty7.value * 1;
+            let qty8_total = qty8.value * 1;
+            let qty9_total = qty9.value * 2;
+            let qty10_total = qty10.value * 1;
+            let qty11_total = qty11.value * 1;
+
+            let friendly_total = friendly.value * 1;
+
+            qty1_total_cell.innerHTML = qty1_total.toFixed(2);
+            qty2_total_cell.innerHTML = qty2_total.toFixed(2);
+            qty3_total_cell.innerHTML = qty3_total.toFixed(2);
+            qty4_total_cell.innerHTML = qty4_total.toFixed(2);
+            qty5_total_cell.innerHTML = qty5_total.toFixed(2);
+            qty6_total_cell.innerHTML = qty6_total.toFixed(2);
+            qty7_total_cell.innerHTML = qty7_total.toFixed(2);
+            qty8_total_cell.innerHTML = qty8_total.toFixed(2);
+            qty9_total_cell.innerHTML = qty9_total.toFixed(2);
+            qty10_total_cell.innerHTML = qty10_total.toFixed(2);
+            qty11_total_cell.innerHTML = qty11_total.toFixed(2);
+
+            friendly_total_cell.innerHTML = friendly_total.toFixed(2);
+
+            calculate_total = qty1_total + qty2_total + qty3_total + qty4_total + qty5_total +
+            qty6_total + qty7_total + qty8_total + qty9_total + qty10_total + qty11_total + friendly_total;
+            grand_total.innerHTML = calculate_total.toFixed(2);
+        }
+        function clearSheet() {
+            qty1.value = 0;
+            qty2.value = 0;
+            qty3.value = 0;
+            qty4.value = 0;
+            qty5.value = 0;
+            qty6.value = 0;
+            qty7.value = 0;
+            qty8.value = 0;
+            qty9.value = 0;
+            qty10.value = 0;
+            qty11.value = 0;
+            friendly.value = 0
+            calculateTotal();
+        }
+    </script>
+</body>
+</html>
