@@ -6,11 +6,12 @@
     <link rel="stylesheet" href="friends_css.css">
 </head>
 <body>
-<div>
-    <h3 class="center">Friends of the Oak Park Public Library<br>
-    Annual Book Fair sale sheet</h3>
-</div>
-    <table>
+    <div id="container">
+        <div id="heading">
+            <h3 class="center">Friends of the Oak Park Public Library<br>
+            Annual Book Fair sale sheet</h3>
+        </div>
+        <table>
         <tr id="row1">
             <td class="left"><button id="clear_btn" tabindex="13">Clear</button></td>
             <th>Price</th>
@@ -23,19 +24,19 @@
         <tr id="row3">
             <td class="left pad_L">Hardcover Book</td>
             <td id="AT_hc_price" class="currency">2.00</td>
-            <td><input id="AT_hc_qty" tabindex="1" type='text' value='0'></td>
+            <td><input id="AT_hc_qty" autofocus tabindex="1" type='text'></td>
             <td id="AT_hc_total" class="right"></td>
         </tr>
         <tr id="row4">
             <td class="left pad_L">Paperback Book</td>
             <td id="AT_pb_price" class="currency">1.00</td>
-            <td><input id="AT_pb_qty" tabindex="2" type='text' value='0'></td>
+            <td><input id="AT_pb_qty" tabindex="2" type='text'></td>
             <td id="AT_pb_total" class="right"></td>
         </tr>
         <tr id="row5">
             <td class="left pad_L">Mass Market</td>
             <td id="AT_mmpb_price" class="currency">0.50</td>
-            <td><input id="AT_mmpb_qty" tabindex="3" type='text' value='0'></td>
+            <td><input id="AT_mmpb_qty" tabindex="3" type='text'></td>
             <td id="AT_mmpb_total" class="right"></td>
         </tr>
 
@@ -45,19 +46,19 @@
         <tr id="row7">
             <td class="left pad_L">Hardcover Book</td>
             <td id="C_hc_price" class="currency">1.00</td>
-            <td><input id="C_hc_qty" tabindex="4" type='text' value='0'></td>
+            <td><input id="C_hc_qty" tabindex="4" type='text'></td>
             <td id="C_hc_total" class="right"></td>
         </tr>
         <tr id="row8">
             <td class="left pad_L">Paperback Book</td>
             <td id="C_pb_price" class="currency">0.50</td>
-            <td><input id="C_pb_qty" tabindex="5" type='text' value='0'></td>
+            <td><input id="C_pb_qty" tabindex="5" type='text'></td>
             <td id="C_pb_total" class="right"></td>
         </tr>
         <tr id="row9">
             <td class="left pad_L">Board Book</td>
             <td id="C_board_price" class="currency">0.50</td>
-            <td><input id="C_board_qty" tabindex="6" type='text' value='0'></td>
+            <td><input id="C_board_qty" tabindex="6" type='text'></td>
             <td id="C_board_total" class="right"></td>
         </tr>
 
@@ -67,37 +68,37 @@
         <tr id="row11">
             <td class="left pad_L">DVDs (per disc)</td>
             <td id="DVD_price" class="currency">1.00</td>
-            <td><input id="DVD_qty" tabindex="7" type='text' value='0'></td>
+            <td><input id="DVD_qty" tabindex="7" type='text'></td>
             <td id="DVD_total" class="right"></td>
         </tr>
         <tr id="row12">
             <td class="left pad_L">CDs (per disc)</td>
             <td id="CD_price" class="currency">1.00</td>
-            <td><input id="CD_qty" tabindex="8" type='text' value='0'></td>
+            <td><input id="CD_qty" tabindex="8" type='text'></td>
             <td id="CD_total" class="right"></td>
         </tr>
         <tr id="row13">
             <td class="left pad_L">Puzzles and Games</td>
             <td id="puzzle_price" class="currency">2.00</td>
-            <td><input id="puzzle_qty" tabindex="9" type='text' value='0'></td>
+            <td><input id="puzzle_qty" tabindex="9" type='text'></td>
             <td id="puzzle_total" class="right"></td>
         </tr>
         <tr id="row14">
             <td class="left pad_L" colspan="2">Sets (as marked) - <i>type in total amount</i></td>
 <!--            <td id="sets_price"></td>-->
-            <td><input id="sets_qty" tabindex="10" type='text' value='0'></td>
+            <td><input id="sets_qty" tabindex="10" type='text'></td>
             <td id="sets_total" class="right"></td>
         </tr>
         <tr id="row15">
             <td class="left pad_L" colspan="2">Other (as marked) - <i>type in total amount</i></td>
 <!--            <td id="other_price"></td>-->
-            <td><input id="other_qty" tabindex="11" type='text' value='0'></td>
+            <td><input id="other_qty" tabindex="11" type='text'></td>
             <td id="other_total" class="right"></td>
         </tr>
 
         <tr id="row16">
             <td class="right bold" colspan="2">Total amount from Friendly Picks</td>
-            <td><input id="friendly" class="bold" tabindex="12" type='text' value='0'></td>
+            <td><input id="friendly" class="bold" tabindex="12" type='text'></td>
             <td id="friendly_total" class="right"></td>
         </tr>
         <tr id="row17">
@@ -106,6 +107,7 @@
         </tr>
 
     </table>
+    </div>
     <script>
         let clear_btn = document.getElementById("clear_btn");
         clear_btn.addEventListener("click", clearSheet);
@@ -183,18 +185,18 @@
             grand_total.innerHTML = calculate_total.toFixed(2);
         }
         function clearSheet() {
-            qty1.value = 0;
-            qty2.value = 0;
-            qty3.value = 0;
-            qty4.value = 0;
-            qty5.value = 0;
-            qty6.value = 0;
-            qty7.value = 0;
-            qty8.value = 0;
-            qty9.value = 0;
-            qty10.value = 0;
-            qty11.value = 0;
-            friendly.value = 0
+            qty1.value = "";
+            qty2.value = "";
+            qty3.value = "";
+            qty4.value = "";
+            qty5.value = "";
+            qty6.value = "";
+            qty7.value = "";
+            qty8.value = "";
+            qty9.value = "";
+            qty10.value = "";
+            qty11.value = "";
+            friendly.value = ""
             calculateTotal();
         }
     </script>
