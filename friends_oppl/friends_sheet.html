@@ -3,7 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <title>Friends of OPPL Book Fair sale sheet</title>
-    <link rel="stylesheet" href="friends_css.css">
+<!--    <link rel="stylesheet" href="friends_css.css">-->
+    <style type="text/css">
+        #container {
+    max-width: 500px;
+    margin: auto;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+td {
+    font-size: 100%;
+    text-align: center;
+    padding: 3px;
+}
+th.qty {
+    font-size: 90%;
+}
+.left {
+     text-align: left;
+}
+.right {
+     text-align: right;
+     padding-right: 8px;
+}
+.center {
+    text-align: center;
+}
+.bold {
+    font-weight: bold;
+}
+.pad_L {
+    padding-left: 15px;
+}
+.pad_R {
+    padding-right = 2px
+}
+tr:nth-child(even) {
+    background-color: #D6EEEE;
+}
+th {
+    padding = 5px;
+    border-spacing = 20px;
+}
+.currency:before {
+    content: '$';
+}
+#clear_btn {
+    width: 50%;
+}
+.grand_cells {
+    font-size: 120%;
+    font-weight: bold;
+    text-align: right;
+}
+#grand_total{
+    font-weight: bold;
+    font-size: 130%;
+    padding-right: 10px
+}
+#grand_total:before {
+    content: '$';
+    font-size: 90%;
+    padding-right: 2px;
+}
+input {
+    width: 35px;
+    text-align: right;
+}
+input:focus {
+    font-weight: bold;
+    color: blue;
+}
+
+    </style>
 </head>
 <body>
     <div id="container">
@@ -84,13 +158,13 @@
             <td id="puzzle_total" class="right"></td>
         </tr>
         <tr id="row14">
-            <td class="left pad_L" colspan="2">Sets (as marked) - <i>type in total amount</i></td>
-<!--            <td id="sets_price"></td>-->
+            <td class="left pad_L">Sets ($1/disc)</td>
+            <td id="sets_price">$1.00/disc</td>
             <td><input id="sets_qty" tabindex="10" inputmode="numeric" type='text'></td>
             <td id="sets_total" class="right"></td>
         </tr>
         <tr id="row15">
-            <td class="left pad_L" colspan="2">Other (as marked) - <i>type in total amount</i></td>
+            <td class="left pad_L" colspan="2">Other (as marked)</td>
 <!--            <td id="other_price"></td>-->
             <td><input id="other_qty" tabindex="11" inputmode="numeric" type='text'></td>
             <td id="other_total" class="right"></td>
@@ -196,8 +270,9 @@
             qty9.value = "";
             qty10.value = "";
             qty11.value = "";
-            friendly.value = ""
+            friendly.value = "";
             calculateTotal();
+            document.querySelector('#AT_hc_qty').focus()
         }
     </script>
 </body>
